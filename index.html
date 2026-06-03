@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MR Analysis Pipeline — Longitudinal Beyin MR Analiz Sistemi</title>
-  <meta name="description" content="Longitudinal beyin MR çalışmaları için geliştirilmiş tam yığın mezuniyet projesi. MR kayıt yönetimi, pipeline orkestrasyonu ve analiz raporlama." />
+  <title>MR Analysis Pipeline — Confidence-Aware Longitudinal Brain MRI Analysis</title>
+  <meta name="description" content="A research-oriented confidence-aware pipeline for longitudinal brain MRI comparison, segmentation, registration, voxelwise change analysis, and quality-control reporting." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -19,12 +19,13 @@
         <span class="logo-text">MR Pipeline</span>
       </a>
       <div class="nav-links">
-        <a href="#overview" data-i18n="navOverview">Genel Bakış</a>
-        <a href="#architecture" data-i18n="navArch">Mimari</a>
+        <a href="#overview" data-i18n="navOverview">Overview</a>
+        <a href="#motivation" data-i18n="navMotivation">Motivation</a>
         <a href="#pipeline" data-i18n="navPipeline">Pipeline</a>
-        <a href="#features" data-i18n="navFeatures">Özellikler</a>
-        <a href="#tech-stack" data-i18n="navTech">Teknolojiler</a>
-        <a href="#team" data-i18n="navTeam">Ekip</a>
+        <a href="#evidence" data-i18n="navEvidence">Evidence</a>
+        <a href="#architecture" data-i18n="navArch">Architecture</a>
+        <a href="#implementation" data-i18n="navTech">Implementation</a>
+        <a href="#team" data-i18n="navTeam">Team</a>
       </div>
       <div class="nav-right">
         <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">EN</button>
@@ -37,12 +38,13 @@
 
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="mobile-menu">
-    <a href="#overview" data-i18n="navOverview">Genel Bakış</a>
-    <a href="#architecture" data-i18n="navArch">Mimari</a>
+    <a href="#overview" data-i18n="navOverview">Overview</a>
+    <a href="#motivation" data-i18n="navMotivation">Motivation</a>
     <a href="#pipeline" data-i18n="navPipeline">Pipeline</a>
-    <a href="#features" data-i18n="navFeatures">Özellikler</a>
-    <a href="#tech-stack" data-i18n="navTech">Teknolojiler</a>
-    <a href="#team" data-i18n="navTeam">Ekip</a>
+    <a href="#evidence" data-i18n="navEvidence">Evidence</a>
+    <a href="#architecture" data-i18n="navArch">Architecture</a>
+    <a href="#implementation" data-i18n="navTech">Implementation</a>
+    <a href="#team" data-i18n="navTeam">Team</a>
   </div>
 
   <!-- Hero -->
@@ -51,32 +53,32 @@
     <div class="hero-glow hero-glow-1"></div>
     <div class="hero-glow hero-glow-2"></div>
     <div class="hero-content">
-      <div class="hero-badge" data-i18n="heroBadge">Bitirme Projesi — 2026</div>
-      <h1><span data-i18n="heroTitle1">Longitudinal Beyin MR</span><br/><span class="gradient-text" data-i18n="heroTitle2">Analiz Pipeline</span></h1>
-      <p class="hero-subtitle" data-i18n="heroSub">MR kayıt yönetimi, pipeline orkestrasyonu ve yapay zeka destekli analiz raporlamayı tek bir platformda birleştiren uçtan uca web uygulaması.</p>
+      <div class="hero-badge" data-i18n="heroBadge">Graduation Project — 2026</div>
+      <h1><span data-i18n="heroTitle1">Confidence-Aware Longitudinal</span><br/><span class="gradient-text" data-i18n="heroTitle2">Brain MRI Analysis Pipeline</span></h1>
+      <p class="hero-subtitle" data-i18n="heroSub">A research-oriented pipeline for comparing baseline and follow-up brain MRI scans, with a focus on multiple sclerosis lesion and tissue-change inspection.</p>
       <div class="hero-actions">
         <a href="#overview" class="btn btn-primary"><span data-i18n="heroBtnExplore">Keşfet</span> <span class="btn-arrow">→</span></a>
         <a href="#architecture" class="btn btn-ghost" data-i18n="heroBtnArch">Mimariyi İncele</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
-          <span class="hero-stat-num">3</span>
-          <span class="hero-stat-label" data-i18n="statLayers">Katman</span>
+          <span class="hero-stat-num">2</span>
+          <span class="hero-stat-label" data-i18n="statModes">Modes</span>
         </div>
         <div class="hero-stat-divider"></div>
         <div class="hero-stat">
-          <span class="hero-stat-num">10+</span>
-          <span class="hero-stat-label" data-i18n="statEndpoints">API Endpoint</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">7</span>
-          <span class="hero-stat-label" data-i18n="statStages">Pipeline Aşaması</span>
+          <span class="hero-stat-num">2</span>
+          <span class="hero-stat-label" data-i18n="statModels">Models</span>
         </div>
         <div class="hero-stat-divider"></div>
         <div class="hero-stat">
           <span class="hero-stat-num">4</span>
-          <span class="hero-stat-label" data-i18n="statServices">Docker Servis</span>
+          <span class="hero-stat-label" data-i18n="statRois">ROIs</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">QC</span>
+          <span class="hero-stat-label" data-i18n="statQc">Metrics</span>
         </div>
       </div>
     </div>
@@ -89,143 +91,176 @@
   <section id="overview" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="overviewTag">Genel Bakış</span>
-        <h2 data-i18n="overviewTitle">Proje Nedir?</h2>
-        <p class="section-desc" data-i18n="overviewDesc">Longitudinal beyin MR çalışmaları için geliştirilmiş, üç katmanlı monorepo mimarisine sahip tam yığın bir web uygulamasıdır.</p>
+        <span class="section-tag" data-i18n="overviewTag">Overview</span>
+        <h2 data-i18n="overviewTitle">What Is This Project?</h2>
+        <p class="section-desc" data-i18n="overviewDesc">A confidence-aware longitudinal MRI analysis pipeline for comparing the same subject across different time points.</p>
       </div>
       <div class="overview-grid">
         <div class="overview-card overview-card-main">
           <div class="overview-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <h3 data-i18n="ov1Title">Amaç</h3>
-          <p data-i18n="ov1Desc">Aynı hastaya ait farklı zamanlarda çekilmiş beyin MR görüntülerini karşılaştırarak, beyin hacmindeki değişimleri otomatik olarak analiz etmek. Klinisyenlere ve araştırmacılara zaman içindeki nörodejeneratif değişimleri takip edebilecekleri bir araç sunmak.</p>
+          <h3 data-i18n="ov1Title">Research Purpose</h3>
+          <p data-i18n="ov1Desc">The project compares baseline and follow-up brain MRI scans to inspect lesion and tissue changes over time. Its first focus is multiple sclerosis progression inspection, while the segmentation-based design makes it extensible to other neurological diseases.</p>
+          <p class="disclaimer" data-i18n="ovDisclaimer">This is not a clinical diagnostic tool; it is a research-oriented inspection and analysis pipeline.</p>
         </div>
         <div class="overview-card">
           <div class="overview-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
-          <h3 data-i18n="ov2Title">Yükle</h3>
-          <p data-i18n="ov2Desc">NIfTI formatında (.nii / .nii.gz) MR dosyalarını sisteme yükleyin ve hasta bilgileriyle eşleştirin.</p>
+          <h3 data-i18n="ov2Title">Pair Scans</h3>
+          <p data-i18n="ov2Desc">Baseline and follow-up NIfTI scans are paired around the same subject to support longitudinal comparison.</p>
         </div>
         <div class="overview-card">
           <div class="overview-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-          <h3 data-i18n="ov3Title">İşle</h3>
-          <p data-i18n="ov3Desc">Baseline ve follow-up taramalarını seçip pipeline oluşturun. Worker kuyruğu üzerinden otomatik işleme başlasın.</p>
+          <h3 data-i18n="ov3Title">Analyze Change</h3>
+          <p data-i18n="ov3Desc">Preprocessing, masking, registration, template construction, and voxelwise change analysis turn scan pairs into inspectable outputs.</p>
         </div>
         <div class="overview-card">
           <div class="overview-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-          <h3 data-i18n="ov4Title">Analiz Et</h3>
-          <p data-i18n="ov4Desc">Voxel bazlı yoğunluk farkı, template QC ve normalizasyon raporlarını arayüzden inceleyin.</p>
+          <h3 data-i18n="ov4Title">Score Confidence</h3>
+          <p data-i18n="ov4Desc">NCC, MAE, Dice, brain volume, ROI agreement, and model cross-checks help separate useful findings from preprocessing or registration artifacts.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Architecture -->
-  <section id="architecture" class="section section-dark">
+  <!-- Motivation -->
+  <section id="motivation" class="section section-dark">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="archTag">Mimari</span>
-        <h2 data-i18n="archTitle">Sistem Mimarisi</h2>
-        <p class="section-desc" data-i18n="archDesc">Monorepo yapısında üç ana katmandan oluşan modüler bir mimari.</p>
+        <span class="section-tag" data-i18n="motivationTag">Problem & Motivation</span>
+        <h2 data-i18n="motivationTitle">Why Longitudinal MRI Comparison Is Difficult</h2>
+        <p class="section-desc" data-i18n="motivationDesc">Multiple sclerosis can cause subtle lesion and tissue changes over time, but those changes are difficult to separate from scanner, modality, preprocessing, and registration effects.</p>
       </div>
-      <div class="arch-diagram">
-        <div class="arch-layer arch-layer-fe">
-          <div class="arch-layer-badge">Frontend</div>
-          <div class="arch-layer-title">React + TypeScript + Vite</div>
-          <div class="arch-layer-items">
-            <span>Dashboard</span><span>MR History</span><span>Pipeline Builder</span><span>Analysis Modal</span>
-          </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="info-kicker" data-i18n="mot1Kicker">Disease signal</span>
+          <h3 data-i18n="mot1Title">Subtle changes over time</h3>
+          <p data-i18n="mot1Desc">MS-related lesion and tissue changes may be small, irregular, and distributed across different brain regions.</p>
         </div>
-        <div class="arch-connector">
-          <div class="arch-connector-line"></div>
-          <span class="arch-connector-label">REST API</span>
-          <div class="arch-connector-line"></div>
+        <div class="info-card">
+          <span class="info-kicker" data-i18n="mot2Kicker">Technical noise</span>
+          <h3 data-i18n="mot2Title">Scanner and modality differences</h3>
+          <p data-i18n="mot2Desc">Reliable comparison requires intensity normalization, brain masking, spatial alignment, and quality-control signals.</p>
         </div>
-        <div class="arch-layer arch-layer-be">
-          <div class="arch-layer-badge">Backend</div>
-          <div class="arch-layer-title">Java Spring Boot</div>
-          <div class="arch-layer-items">
-            <span>Study CRUD</span><span>Pipeline Manager</span><span>File Storage</span><span>Queue Writer</span>
-          </div>
+        <div class="info-card">
+          <span class="info-kicker" data-i18n="mot3Kicker">Extensibility</span>
+          <h3 data-i18n="mot3Title">Segmentation-based analysis</h3>
+          <p data-i18n="mot3Desc">A segmentation-aware workflow makes the system easier to extend to additional neurological disease research scenarios.</p>
         </div>
-        <div class="arch-connector">
-          <div class="arch-connector-line"></div>
-          <span class="arch-connector-label">File Queue + PostgreSQL</span>
-          <div class="arch-connector-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MRI Modalities -->
+  <section id="modalities" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="modalitiesTag">MRI Modalities</span>
+        <h2 data-i18n="modalitiesTitle">T1w, T2w, and FLAIR Perspective</h2>
+        <p class="section-desc" data-i18n="modalitiesDesc">The project is designed around a multimodal MRI perspective, because MS-related changes may appear differently across T1w, T2w, and FLAIR scans.</p>
+      </div>
+      <div class="modality-grid">
+        <div class="modality-card">
+          <div class="modality-label">T1w</div>
+          <p data-i18n="modT1">Provides anatomical structure and tissue contrast. Useful for registration, template construction, and anatomical comparison.</p>
         </div>
-        <div class="arch-layer arch-layer-ml">
-          <div class="arch-layer-badge">Pipeline / Worker</div>
-          <div class="arch-layer-title">Python MR-AI-Pipeline</div>
-          <div class="arch-layer-items">
-            <span>Preprocessing</span><span>Registration</span><span>Template</span><span>Voxelwise Analysis</span>
-          </div>
+        <div class="modality-card">
+          <div class="modality-label">T2w</div>
+          <p data-i18n="modT2">Highlights abnormal tissue signal and supports lesion burden inspection.</p>
+        </div>
+        <div class="modality-card">
+          <div class="modality-label">FLAIR</div>
+          <p data-i18n="modFlair">Suppresses cerebrospinal fluid signal, making periventricular and juxtacortical MS lesions easier to inspect.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Pipeline -->
-  <section id="pipeline" class="section">
+  <section id="pipeline" class="section section-dark">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="pipeTag">Pipeline</span>
-        <h2 data-i18n="pipeTitle">Analiz Aşamaları</h2>
-        <p class="section-desc" data-i18n="pipeDesc">LOCAL_CPU modunda çalışan, CPU dostu MR işleme akışı.</p>
+        <span class="section-tag" data-i18n="pipeTag">Core Pipeline</span>
+        <h2 data-i18n="pipeTitle">From Scan Pair to Change Inspection</h2>
+        <p class="section-desc" data-i18n="pipeDesc">The core flow is not limited to a CPU-only demo. Local CPU mode validates the essential imaging steps, while full analysis extends the same queue with heavier segmentation and confidence stages.</p>
       </div>
       <div class="pipeline-timeline">
         <div class="pipeline-step" data-step="1">
           <div class="pipeline-step-dot"></div>
           <div class="pipeline-step-content">
             <div class="pipeline-step-num">01</div>
-            <h3 data-i18n="p1">Dosya Kopyalama</h3>
-            <p data-i18n="p1d">Baseline ve follow-up NIfTI dosyaları proje output yapısına kopyalanır.</p>
+            <h3 data-i18n="p1">Preprocessing</h3>
+            <p data-i18n="p1d">Baseline and follow-up scans are prepared through resampling, filtering, and consistent output organization.</p>
           </div>
         </div>
         <div class="pipeline-step" data-step="2">
           <div class="pipeline-step-dot"></div>
           <div class="pipeline-step-content">
             <div class="pipeline-step-num">02</div>
-            <h3 data-i18n="p2">Preprocessing</h3>
-            <p data-i18n="p2d">Görüntüler ön işleme adımlarından geçirilir; yeniden örnekleme ve filtre uygulanır.</p>
+            <h3 data-i18n="p2">Brain Mask Extraction</h3>
+            <p data-i18n="p2d">Brain masks are extracted to isolate comparable brain tissue and reduce background-driven artifacts.</p>
           </div>
         </div>
         <div class="pipeline-step" data-step="3">
           <div class="pipeline-step-dot"></div>
           <div class="pipeline-step-content">
             <div class="pipeline-step-num">03</div>
-            <h3 data-i18n="p3">Brain Mask & Extraction</h3>
-            <p data-i18n="p3d">Otsu tabanlı brain mask üretimi yapılır ve beyin dokusu çıkarılır.</p>
+            <h3 data-i18n="p3">Masked Intensity Normalization</h3>
+            <p data-i18n="p3d">Intensity normalization is computed inside the shared brain region to make time-point comparison more reliable.</p>
           </div>
         </div>
         <div class="pipeline-step" data-step="4">
           <div class="pipeline-step-dot"></div>
           <div class="pipeline-step-content">
             <div class="pipeline-step-num">04</div>
-            <h3 data-i18n="p4">Normalization</h3>
-            <p data-i18n="p4d">Mask tabanlı intensity normalization ve histogram matching QC üretimi gerçekleştirilir.</p>
+            <h3 data-i18n="p4">Direct / Optimized Registration</h3>
+            <p data-i18n="p4d">Scans are spatially aligned so baseline and follow-up anatomy can be compared voxel by voxel.</p>
           </div>
         </div>
         <div class="pipeline-step" data-step="5">
           <div class="pipeline-step-dot"></div>
           <div class="pipeline-step-content">
             <div class="pipeline-step-num">05</div>
-            <h3 data-i18n="p5">Registration</h3>
-            <p data-i18n="p5d">Direct registration ve within-subject template oluşturma aşaması.</p>
+            <h3 data-i18n="p5">Subject-Specific Template</h3>
+            <p data-i18n="p5d">A within-subject template supports longitudinal comparison in a stable subject-centered space.</p>
           </div>
         </div>
         <div class="pipeline-step" data-step="6">
           <div class="pipeline-step-dot"></div>
           <div class="pipeline-step-content">
             <div class="pipeline-step-num">06</div>
-            <h3 data-i18n="p6">Voxelwise Analysis</h3>
-            <p data-i18n="p6d">Template uzayında voxel bazlı yoğunluk farkı analizi hesaplanır.</p>
+            <h3 data-i18n="p6">Voxelwise Change Analysis</h3>
+            <p data-i18n="p6d">Difference maps, absolute difference maps, and change-direction outputs are produced for inspection.</p>
           </div>
         </div>
         <div class="pipeline-step" data-step="7">
           <div class="pipeline-step-dot"></div>
           <div class="pipeline-step-content">
             <div class="pipeline-step-num">07</div>
-            <h3 data-i18n="p7">Rapor Üretimi</h3>
-            <p data-i18n="p7d">JSON rapor, NIfTI çıktılar, CSV özetleri ve manifest dosyası üretilir.</p>
+            <h3 data-i18n="p7">Report Generation</h3>
+            <p data-i18n="p7d">NIfTI outputs, CSV metrics, JSON QC reports, and pipeline_step_report.json summarize the analysis.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Execution Modes -->
+  <section id="execution" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="execTag">Execution Modes</span>
+        <h2 data-i18n="execTitle">Local CPU + Full Analysis GPU</h2>
+        <p class="section-desc" data-i18n="execDesc">The advanced path is an optional execution route for heavier AI-ready medical imaging stages, not a requirement for every lightweight validation run.</p>
+      </div>
+      <div class="mode-grid">
+        <div class="mode-card">
+          <div class="mode-badge">LOCAL_CPU</div>
+          <h3 data-i18n="cpuTitle">Local CPU Mode</h3>
+          <p data-i18n="cpuDesc">Runs on standard hardware for lightweight validation of preprocessing, brain masking, normalization, registration, template construction, and voxelwise reports.</p>
+        </div>
+        <div class="mode-card mode-card-advanced">
+          <div class="mode-badge">FULL_ANALYSIS</div>
+          <h3 data-i18n="gpuTitle">Full Analysis GPU Mode</h3>
+          <p data-i18n="gpuDesc">Targets SynthSeg segmentation, FastSurfer cross-checking, ROI registration QC, model agreement, confidence scoring, and MS lesion detection through the GPU worker queue.</p>
         </div>
       </div>
     </div>
@@ -235,90 +270,133 @@
   <section id="features" class="section section-dark">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="featTag">Özellikler</span>
-        <h2 data-i18n="featTitle">Temel Yetenekler</h2>
+        <span class="section-tag" data-i18n="featTag">Segmentation & Confidence</span>
+        <h2 data-i18n="featTitle">Core Research Capabilities</h2>
       </div>
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
-          <h3 data-i18n="f1">MR Study Yönetimi</h3>
-          <p data-i18n="f1d">NIfTI dosya yükleme, metadata saklama, study geçmişi listeleme ve detay görüntüleme.</p>
+          <h3 data-i18n="f1">Longitudinal MRI Pairing</h3>
+          <p data-i18n="f1d">Baseline and follow-up scans are paired for same-subject comparison across time.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
-          <h3 data-i18n="f2">Longitudinal Eşleştirme</h3>
-          <p data-i18n="f2d">Aynı hastaya ait baseline ve follow-up taramalarını otomatik eşleştirme ve doğrulama.</p>
+          <h3 data-i18n="f2">Confidence-Aware QC</h3>
+          <p data-i18n="f2d">Similarity, overlap, volume, and registration signals make every comparison easier to trust or question.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-          <h3 data-i18n="f3">Pipeline Orkestrasyonu</h3>
-          <p data-i18n="f3d">Aşama seçimi, execution mode (LOCAL_CPU / FULL_ANALYSIS) ve otomatik iş kuyruğu yönetimi.</p>
+          <h3 data-i18n="f3">Segmentation-Based Analysis</h3>
+          <p data-i18n="f3d">Anatomical regions and lesion-focused outputs can be inspected beyond global brain-volume signals.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <h3 data-i18n="f4">Canlı İlerleme Takibi</h3>
-          <p data-i18n="f4d">Pipeline durumu, aktif aşama, yüzde bilgisi ve timeline bazlı aşama görünümü.</p>
+          <h3 data-i18n="f4">SynthSeg / FastSurfer Agreement</h3>
+          <p data-i18n="f4d">The full analysis path compares segmentation outputs to support confidence scoring.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-          <h3 data-i18n="f5">Analiz Raporları</h3>
-          <p data-i18n="f5d">JSON tabanlı normalization QC, template QC, voxelwise QC raporları ve CSV özetleri.</p>
+          <h3 data-i18n="f5">Voxelwise Change Maps</h3>
+          <p data-i18n="f5d">Template-space difference maps make local intensity changes visible for research inspection.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-          <h3 data-i18n="f6">Dashboard & Metrikler</h3>
-          <p data-i18n="f6d">Toplam study, pipeline sayısı, tamamlanan iş ve worker bekleyen iş metrikleri.</p>
+          <h3 data-i18n="f6">Subject-Specific Template</h3>
+          <p data-i18n="f6d">A subject-centered template reduces avoidable spatial mismatch between time points.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg></div>
-          <h3 data-i18n="f7">Docker Compose</h3>
-          <p data-i18n="f7d">Frontend, backend, PostgreSQL ve CPU worker servislerini tek komutla ayağa kaldırma.</p>
+          <h3 data-i18n="f7">CPU + GPU Execution Modes</h3>
+          <p data-i18n="f7d">The queue supports lightweight local runs and an optional advanced GPU worker profile.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
-          <h3 data-i18n="f8">Veri Modeli</h3>
-          <p data-i18n="f8d">MrStudy, PipelineJob ve AnalysisResult entity'leri ile ilişkisel veri yönetimi.</p>
+          <h3 data-i18n="f8">Web App Interface</h3>
+          <p data-i18n="f8d">Study management, pipeline builder, history, dashboard, and report inspection stay available as implementation features.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- API -->
-  <section id="api" class="section">
+  <!-- Prototype Evidence -->
+  <section id="evidence" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="apiTag">API</span>
-        <h2 data-i18n="apiTitle">REST API Endpoints</h2>
-        <p class="section-desc" data-i18n="apiDesc">Spring Boot backend tarafından sunulan API arayüzü.</p>
+        <span class="section-tag" data-i18n="evidenceTag">Prototype Evidence</span>
+        <h2 data-i18n="evidenceTitle">Quality Metrics Explained</h2>
+        <p class="section-desc" data-i18n="evidenceDesc">Prototype QC values from the project evidence, shown as engineering validation signals rather than clinical validation.</p>
       </div>
-      <div class="api-table-wrap">
-        <table class="api-table">
+      <div class="evidence-grid">
+        <div class="evidence-card"><span>NCC</span><strong>0.9454</strong><p data-i18n="evNcc">Intensity similarity after registration. Higher values indicate better similarity.</p></div>
+        <div class="evidence-card"><span>MAE</span><strong>0.0437</strong><p data-i18n="evMae">Average voxel-level intensity difference. Lower values suggest better alignment and normalization.</p></div>
+        <div class="evidence-card"><span>Dice</span><strong>0.9434</strong><p data-i18n="evDice">Mask overlap after preprocessing and registration. Higher Dice means better shared-mask overlap.</p></div>
+        <div class="evidence-card"><span>Common mask</span><strong>1,688,238</strong><p data-i18n="evMask">Shared brain voxels available for voxelwise longitudinal comparison.</p></div>
+      </div>
+      <div class="metric-table-wrap">
+        <table class="metric-table">
           <thead>
-            <tr><th data-i18n="apiColMethod">Method</th><th data-i18n="apiColEndpoint">Endpoint</th><th data-i18n="apiColDesc">Açıklama</th></tr>
+            <tr><th data-i18n="metricColMetric">Metric</th><th data-i18n="metricColMeaning">Meaning</th><th data-i18n="metricColWhy">Why it matters</th></tr>
           </thead>
           <tbody>
-            <tr><td><span class="method get">GET</span></td><td>/api/health</td><td data-i18n="api1">Sistem sağlık kontrolü</td></tr>
-            <tr><td><span class="method get">GET</span></td><td>/api/dashboard</td><td data-i18n="api2">Dashboard özet metrikleri</td></tr>
-            <tr><td><span class="method get">GET</span></td><td>/api/studies</td><td data-i18n="api3">Tüm MR study listesi</td></tr>
-            <tr><td><span class="method get">GET</span></td><td>/api/studies/{id}</td><td data-i18n="api4">Tek study detayı</td></tr>
-            <tr><td><span class="method post">POST</span></td><td>/api/studies</td><td data-i18n="api5">Yeni MR study kaydı oluşturma</td></tr>
-            <tr><td><span class="method post">POST</span></td><td>/api/studies/upload</td><td data-i18n="api6">NIfTI dosyası yükleme</td></tr>
-            <tr><td><span class="method delete">DEL</span></td><td>/api/studies/{id}</td><td data-i18n="api7">Study silme</td></tr>
-            <tr><td><span class="method get">GET</span></td><td>/api/pipelines</td><td data-i18n="api8">Pipeline listesi</td></tr>
-            <tr><td><span class="method post">POST</span></td><td>/api/pipelines</td><td data-i18n="api9">Yeni pipeline oluşturma</td></tr>
-            <tr><td><span class="method get">GET</span></td><td>/api/analysis-results/{id}/content</td><td data-i18n="api10">Analiz rapor içeriği</td></tr>
+            <tr><td>NCC</td><td data-i18n="metricNccMeaning">Measures intensity similarity between aligned scans.</td><td data-i18n="metricNccWhy">Higher values indicate better similarity after registration.</td></tr>
+            <tr><td>MAE</td><td data-i18n="metricMaeMeaning">Measures average voxel-level intensity difference.</td><td data-i18n="metricMaeWhy">Lower values suggest better alignment and normalization.</td></tr>
+            <tr><td>Dice</td><td data-i18n="metricDiceMeaning">Measures overlap between masks.</td><td data-i18n="metricDiceWhy">Higher Dice means brain masks overlap well after preprocessing and registration.</td></tr>
+            <tr><td>Common mask voxels</td><td data-i18n="metricMaskMeaning">Shows how much shared brain region is available.</td><td data-i18n="metricMaskWhy">A larger reliable shared region supports voxelwise comparison.</td></tr>
+            <tr><td>Brain volume</td><td data-i18n="metricVolumeMeaning">Tracks mask-derived volume as a QC signal.</td><td data-i18n="metricVolumeWhy">Unrealistic changes may indicate masking or preprocessing issues.</td></tr>
           </tbody>
         </table>
+      </div>
+      <p class="evidence-note" data-i18n="evidenceNote">Prototype QC values, not clinical validation.</p>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section id="architecture" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="archTag">System Architecture</span>
+        <h2 data-i18n="archTitle">Frontend, Backend, Queue, and Workers</h2>
+        <p class="section-desc" data-i18n="archDesc">The web interface remains important, but the architecture now foregrounds the worker queue and the CPU/GPU pipeline execution paths.</p>
+      </div>
+      <div class="arch-diagram">
+        <div class="arch-layer arch-layer-fe">
+          <div class="arch-layer-badge">Frontend</div>
+          <div class="arch-layer-title">React + TypeScript + Vite</div>
+          <div class="arch-layer-items"><span>Upload</span><span>Compare</span><span>Inspect</span><span>Export reports</span></div>
+        </div>
+        <div class="arch-connector"><div class="arch-connector-line"></div><span class="arch-connector-label">REST API</span><div class="arch-connector-line"></div></div>
+        <div class="arch-layer arch-layer-be">
+          <div class="arch-layer-badge">Backend</div>
+          <div class="arch-layer-title">Spring Boot + PostgreSQL</div>
+          <div class="arch-layer-items"><span>Study API</span><span>Analysis API</span><span>Metadata</span><span>Artifact preview</span></div>
+        </div>
+        <div class="arch-connector"><div class="arch-connector-line"></div><span class="arch-connector-label">File-based worker queue</span><div class="arch-connector-line"></div></div>
+        <div class="worker-grid">
+          <div class="arch-layer arch-layer-cpu">
+            <div class="arch-layer-badge">CPU Worker</div>
+            <div class="arch-layer-title">Local CPU pipeline</div>
+            <div class="arch-layer-items"><span>Preprocess</span><span>Mask</span><span>Register</span><span>Report</span></div>
+          </div>
+          <div class="arch-layer arch-layer-gpu">
+            <div class="arch-layer-badge">GPU Worker</div>
+            <div class="arch-layer-title">Full Analysis queue</div>
+            <div class="arch-layer-items"><span>SynthSeg</span><span>FastSurfer</span><span>Agreement</span><span>MS lesions</span></div>
+          </div>
+        </div>
+        <div class="storage-strip">
+          <span>uploads/</span><span>worker-queue/</span><span>pipeline outputs</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Tech Stack -->
-  <section id="tech-stack" class="section section-dark">
+  <!-- Implementation -->
+  <section id="implementation" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="techTag">Teknolojiler</span>
-        <h2 data-i18n="techTitle">Kullanılan Teknoloji Yığını</h2>
+        <span class="section-tag" data-i18n="implTag">Implementation Details</span>
+        <h2 data-i18n="implTitle">Tech Stack, API, and Outputs</h2>
+        <p class="section-desc" data-i18n="implDesc">The lower-level implementation details are grouped here so the page reads first as a research pipeline and then as a web system.</p>
       </div>
       <div class="tech-grid">
         <div class="tech-card">
@@ -341,8 +419,10 @@
           <div class="tech-card-header pipeline-color">Pipeline</div>
           <ul>
             <li>Python</li>
+            <li>SimpleITK</li>
             <li>NiBabel</li>
-            <li>NumPy / SciPy</li>
+            <li>NumPy / Pandas</li>
+            <li>SynthSeg / FastSurfer adapters</li>
           </ul>
         </div>
         <div class="tech-card">
@@ -351,33 +431,52 @@
             <li>Docker Compose</li>
             <li>PostgreSQL</li>
             <li>File-based Queue</li>
+            <li>CPU/GPU worker profiles</li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Output Structure -->
-  <section id="output" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag" data-i18n="outTag">Çıktılar</span>
-        <h2 data-i18n="outTitle">Çıktı Organizasyonu</h2>
-        <p class="section-desc" data-i18n="outDesc">Subject-merkezli klasör yapısıyla organize edilen pipeline çıktıları.</p>
+      <div class="subsection-header">
+        <h3 data-i18n="apiTitle">REST API Endpoints</h3>
+        <p data-i18n="apiDesc">Selected Spring Boot endpoints for study management, previews, pipeline execution, and artifact inspection.</p>
+      </div>
+      <div class="api-table-wrap">
+        <table class="api-table">
+          <thead>
+            <tr><th data-i18n="apiColMethod">Method</th><th data-i18n="apiColEndpoint">Endpoint</th><th data-i18n="apiColDesc">Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="method get">GET</span></td><td>/api/health</td><td data-i18n="api1">System health check</td></tr>
+            <tr><td><span class="method get">GET</span></td><td>/api/dashboard</td><td data-i18n="api2">Dashboard summary metrics</td></tr>
+            <tr><td><span class="method get">GET</span></td><td>/api/studies</td><td data-i18n="api3">All MR study list</td></tr>
+            <tr><td><span class="method get">GET</span></td><td>/api/studies/{id}/preview</td><td data-i18n="api4">Study image preview</td></tr>
+            <tr><td><span class="method get">GET</span></td><td>/api/studies/{id}/preview-metadata</td><td data-i18n="api5">Study preview metadata</td></tr>
+            <tr><td><span class="method post">POST</span></td><td>/api/studies/upload</td><td data-i18n="api6">NIfTI file upload</td></tr>
+            <tr><td><span class="method post">POST</span></td><td>/api/pipelines</td><td data-i18n="api7">Create pipeline job</td></tr>
+            <tr><td><span class="method get">GET</span></td><td>/api/analysis-results/{id}/artifact-preview</td><td data-i18n="api8">Analysis artifact preview</td></tr>
+            <tr><td><span class="method get">GET</span></td><td>/api/analysis-results/{id}/artifact-preview-metadata</td><td data-i18n="api9">Artifact preview metadata</td></tr>
+            <tr><td><span class="method get">GET</span></td><td>/api/analysis-results/{id}/artifact-content</td><td data-i18n="api10">Artifact or report content</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subsection-header">
+        <h3 data-i18n="outTitle">Output Organization</h3>
+        <p data-i18n="outDesc">Subject-centered folders organize NIfTI outputs, CSV metrics, voxelwise difference maps, and JSON QC reports.</p>
       </div>
       <div class="folder-tree">
         <div class="folder-root"><span class="fi fi-dir"></span> outputs/subjects/&lt;subject-id&gt;/</div>
         <div class="folder-item l1"><span class="fi fi-dir"></span> scans/ <span class="folder-note">— Baseline & follow-up NIfTI</span></div>
-        <div class="folder-item l1"><span class="fi fi-dir"></span> registration/ <span class="folder-note">— Registration artifact'ları</span></div>
-        <div class="folder-item l1"><span class="fi fi-dir"></span> segmentation/ <span class="folder-note">— Segmentasyon çıktıları</span></div>
-        <div class="folder-item l1"><span class="fi fi-dir"></span> analysis/ <span class="folder-note">— Analiz sonuçları</span></div>
-        <div class="folder-item l2"><span class="fi fi-file"></span> normalization_qc.json</div>
-        <div class="folder-item l2"><span class="fi fi-file"></span> template_qc.json</div>
-        <div class="folder-item l2"><span class="fi fi-file"></span> voxelwise_qc.json</div>
+        <div class="folder-item l1"><span class="fi fi-dir"></span> registration/ <span class="folder-note">— registration transforms and aligned scans</span></div>
+        <div class="folder-item l1"><span class="fi fi-dir"></span> segmentation/ <span class="folder-note">— segmentation outputs and model agreement</span></div>
+        <div class="folder-item l1"><span class="fi fi-dir"></span> analysis/qc/ <span class="folder-note">— JSON QC reports</span></div>
+        <div class="folder-item l1"><span class="fi fi-dir"></span> analysis/metrics/ <span class="folder-note">— CSV metrics</span></div>
+        <div class="folder-item l1"><span class="fi fi-dir"></span> analysis/reports/ <span class="folder-note">— pipeline report</span></div>
         <div class="folder-item l2"><span class="fi fi-file"></span> intensity_diff.nii.gz</div>
         <div class="folder-item l2"><span class="fi fi-file"></span> abs_intensity_diff.nii.gz</div>
+        <div class="folder-item l2"><span class="fi fi-file"></span> change_direction_map.nii.gz</div>
         <div class="folder-item l2"><span class="fi fi-file"></span> global_summary.csv</div>
-        <div class="folder-item l2"><span class="fi fi-file"></span> local_cpu_report.json</div>
+        <div class="folder-item l2"><span class="fi fi-file"></span> analysis/reports/pipeline_step_report.json</div>
       </div>
     </div>
   </section>
